@@ -13,6 +13,10 @@ class Player:
             self.current_room = getattr(self.current_room, f"{direction}_to")
             print(self.current_room)
             print(self.current_room.monsters[0])
+            if self.current_room.monsters:
+                print(f"It's time to fight {self.current_room.monsters[0].name}")
+            else:
+                print("No fight")
         else:
             # Else print an error message
             print("Sorry! there's no room here.", "\n")
