@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -42,6 +43,8 @@ room['treasure'].s_to = room['narrow']
 # Write a loop that:
 #
 # * Prints the current room name
+
+
 # * Prints the current description (the textwrap module might be useful here).
 # * Waits for user input and decides what to do.
 #
@@ -49,3 +52,24 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+player = Player("Brady", room['outside'])
+current_room = player.current_room
+
+print(current_room)
+
+valid_directions = ["n", "s", "e", "w"]
+
+while True:
+    # Wait for user input
+    cmd = input("-> ")
+    # Parse user inputs (n, s, e, w, q)
+    if cmd in valid_directions:
+        # If input is valid, move the player and loop
+        player.travel(cmd)
+    elif cmd == "q":
+        print("Goodbye!")
+        exit()
+    else:
+        print("I did not recognize that command")
+
