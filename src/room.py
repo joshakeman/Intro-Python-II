@@ -1,10 +1,28 @@
 # Implement a class to hold room information. This should have name and
 # description attributes.
 
+import random
+
+monster = {
+    'Watcher in the Water': Monster("Watcher in the Water",
+                                    20, "tentacles"),
+    'Orc': Monster("Orc", 5,  "sword"),
+    'Cave troll': Monster("Cave troll", 40, "club"),
+}
+
 class Room:
     def __init__(self, title, description):
+        randnum = random.randint(1,20)
+        if randum < 7:
+            room_monster=None
+        elif randum: <16:
+            room_monster=monster['Orc']
+        else:
+            room_monster=monster['Cave troll']
+
         self.title = title
         self.description = description
+        self.monsters = [room_monster]
         self.n_to = None
         self.s_to = None
         self.e_to = None

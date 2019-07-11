@@ -1,6 +1,7 @@
 from room import Room
 from player import Player
 
+
 # Declare all the rooms
 
 room = {
@@ -53,7 +54,7 @@ room['treasure'].s_to = room['narrow']
 #
 # If the user enters "q", quit the game.
 
-player = Player("Brady", room['outside'])
+player = Player("Josh", room['outside'])
 current_room = player.current_room
 
 print(current_room)
@@ -67,6 +68,7 @@ while True:
     if cmd in valid_directions:
         # If input is valid, move the player and loop
         player.travel(cmd)
+        print(current_room)
     elif cmd == "q":
         print("Goodbye!")
         exit()
