@@ -5,6 +5,6 @@ class Monster:
         self.weapon = weapon
     def __str__(self):
         str = f"""
-              \n A {self.title} appears and looks pissed!
-              \n   {self.description}\n"""
+              \n A {self.name} appears and looks pissed!
+              \n"""
         return str

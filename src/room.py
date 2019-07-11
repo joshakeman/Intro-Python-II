@@ -2,23 +2,25 @@
 # description attributes.
 
 import random
+from monster import Monster
 
 monster = {
     'Watcher in the Water': Monster("Watcher in the Water",
                                     20, "tentacles"),
-    'Orc': Monster("Orc", 5,  "sword"),
+    'Orc': Monster("Orc", 5, "sword"),
     'Cave troll': Monster("Cave troll", 40, "club"),
 }
 
 class Room:
     def __init__(self, title, description):
         randnum = random.randint(1,20)
-        if randum < 7:
-            room_monster=None
-        elif randum: <16:
+        if randnum > 16:
+            room_monster=monster['Cave troll']
+        elif randnum > 7:
             room_monster=monster['Orc']
         else:
-            room_monster=monster['Cave troll']
+            room_monster=None
+        print(randnum)
 
         self.title = title
         self.description = description

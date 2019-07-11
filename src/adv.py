@@ -68,7 +68,6 @@ while True:
     if cmd in valid_directions:
         # If input is valid, move the player and loop
         player.travel(cmd)
-        print(current_room)
     elif cmd == "q":
         print("Goodbye!")
         exit()

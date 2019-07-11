@@ -12,6 +12,7 @@ class Player:
             # If so, update current_room to new room and print description
             self.current_room = getattr(self.current_room, f"{direction}_to")
             print(self.current_room)
+            print(self.current_room.monsters[0])
         else:
             # Else print an error message
             print("Sorry! there's no room here.", "\n")
